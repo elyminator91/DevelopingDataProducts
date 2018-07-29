@@ -1,0 +1,29 @@
+---
+title: "Week3Assignment"
+author: "EugLee"
+date: "29 July 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, message=FALSE}
+# Load required library
+library(plotly)
+library(magrittr)
+
+# Load required dataset
+data("iris")
+```
+
+## Petal Length vs Sepal Length
+```{r}
+plot_ly(data = iris, x = iris$Sepal.Length, y = iris$Petal.Length, 
+        type = "scatter", mode = "markers",
+        color = iris$Species) %>%
+  layout(title = "Iris",
+         xaxis = list(title = "Sepal Length"), 
+         yaxis = list(title = "Petal Length"))
+```
