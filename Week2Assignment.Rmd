@@ -1,0 +1,26 @@
+---
+title: "Week2Assignment"
+author: "EugLee"
+date: "29 July 2018"
+output: 
+  html_document:
+    keep_md : true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+# Load required libraries
+library(leaflet)
+```
+
+## `r date()`
+```{r}
+leaflet() %>% 
+  addProviderTiles(providers$OpenStreetMap) %>%
+  addTiles() %>%
+  addMarkers(lat = 1.3644, lng = 103.9915, popup = "Singapore Changi Airport")
+```
+
